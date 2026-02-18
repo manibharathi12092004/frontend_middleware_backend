@@ -60,15 +60,18 @@ const Chat = () => {
 
     try {
       // Call the API
-      const response = await fetch('http://localhost:8000/api/summarize/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        "https://backend-lxo6.onrender.com/api/summarize/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            text: input,
+          }),
         },
-        body: JSON.stringify({
-          text: input,
-        }),
-      });
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
