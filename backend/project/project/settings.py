@@ -150,6 +150,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',  # CRA default
     'http://127.0.0.1:5173',
     'http://127.0.0.1:3000',
+
+    "https://frontend-middleware-backend.onrender.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
