@@ -1,8 +1,6 @@
 import logging
-from datetime import datetime
 
-
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("django")
 
 
 class RequestLoggingMiddleware:
@@ -15,8 +13,7 @@ class RequestLoggingMiddleware:
         if request.path == "/api/summarize/" and request.method == "POST":
             client_ip = request.META.get("REMOTE_ADDR")
             logger.info(
-                f"[{datetime.now()}] IP: {client_ip} | Body: {request.body}"
+                f"Summarize API | IP: {client_ip}"
             )
 
-        response = self.get_response(request)
-        return response
+        return self.get_response(request)

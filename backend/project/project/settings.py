@@ -16,6 +16,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY")
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "https://ollama.com")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gpt-oss:120b")
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -132,7 +137,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-OLLAMA_URL = os.getenv('OLLAMA_URL', 'http://localhost:11434/api/generate')
 
 # CORS Configuration
 CORS_ALLOWED_ORIGINS = [
